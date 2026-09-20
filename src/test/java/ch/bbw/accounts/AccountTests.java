@@ -4,6 +4,7 @@ package ch.bbw.accounts;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
 
@@ -14,13 +15,23 @@ import static org.junit.jupiter.api.Assertions.fail;
  * @version 2.0
  */
 public class AccountTests {
+    private Account account;
+
+    public void setUp() {
+        account = new SavingsAccount("1234567890");
+
+    }
+
     /**
      * Tested die Initialisierung eines Kontos.
      */
     @Test
     @DisplayName("Simple constructor-Test for SavingsAccount should work")
     public void testInit() {
-       fail("ToDo");
+       // simple constructor test for SavingsAccount
+        account = new SavingsAccount("1234567890");
+        assertEquals("1234567890", account.getId());
+
     }
 
     /**
